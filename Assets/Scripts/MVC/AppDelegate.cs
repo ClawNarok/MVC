@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class AppDelegate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    SceneWireframe _wireframe;
+
+    [SerializeField]
+    InspectorViewControllerFactory _factory;
+
+    IEnumerator Start()
     {
-        
+        yield return new WaitForEndOfFrame();
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Init()
     {
-        
+        new GameInitializer(_wireframe, _factory).Init();
     }
 }
