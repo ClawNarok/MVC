@@ -10,6 +10,7 @@ public class AppDelegate : MonoBehaviour
     [SerializeField]
     InspectorViewControllerFactory _factory;
 
+
     IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();

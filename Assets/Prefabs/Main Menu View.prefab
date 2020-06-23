@@ -89,6 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _txtTitle: {fileID: 7905871192948570571}
+  _btnList: {fileID: 7905871192098968736}
+  _buttonViewPrefab: {fileID: 6263618098719604980, guid: 0b73110faa145ed46aec197ded782938,
+    type: 3}
 --- !u!1 &7905871192098968751
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,8 +125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27, y: 0.08}
   m_AnchorMax: {x: 0.73, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 98.5}
-  m_SizeDelta: {x: 0, y: 273}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7905871192098968737
 MonoBehaviour:
@@ -143,7 +146,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 10
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1

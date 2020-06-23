@@ -1,20 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameInitializer
+public class SettingsMenuViewController : ViewController<SettingsMenuView>
 {
     SceneWireframe _wireframe;
     IViewControllerFactory _factory;
 
 
-    public GameInitializer(SceneWireframe wireframe, IViewControllerFactory factory)
+    public SettingsMenuViewController(SettingsMenuView view, SceneWireframe wireframe, IViewControllerFactory factory) : base(view)
     {
         _wireframe = wireframe;
         _factory = factory;
     }
 
-    public void Init()
+    public void Setup()
+    {
+        View.Setup(BackToMenu, "Configurações", "Voltar");
+    }
+
+    void BackToMenu()
     {
         MainMenuViewController mainMenuViewController = _factory.CreateMainMenuViewController();
         mainMenuViewController.Setup();
