@@ -11,9 +11,11 @@ public class PlayerControl : MonoBehaviour
     public float speedY;
     public float speedX;
 
+    public int Score;
+
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -38,6 +40,19 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Morreu!");
+        if(Score > PlayerPrefs.GetInt("Recorde"))
+        {
+            PlayerPrefs.SetInt("Recorde", Score);
+        }
+
+        PlayerPrefs.SetInt("Score", Score);
+
+        Application.LoadLevel("GameOver");
     }
+
+    public void addscore()
+    {
+        Score++;
+    }
+
 }
