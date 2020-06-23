@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 149131783}
-  maxHeight: 0.76
+  maxHeight: 0.45
   minHeight: -1.87
   speedY: 0.3
   speedX: 0.1
