@@ -35,4 +35,9 @@ public class PlayerControl : MonoBehaviour
             player.transform.position = new Vector2(pos.x, minHeight);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Morreu!");
+    }
 }
