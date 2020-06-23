@@ -6,12 +6,10 @@ public class CarroBehavior : MonoBehaviour
 {
     public float speed;
     public GameObject carro;
-
     private PlayerControl player;
-
     private bool passou;
-
     private SpawnObject spawn;
+
 
     void Start()
     {
@@ -57,7 +55,6 @@ public class CarroBehavior : MonoBehaviour
 
             Debug.Log(player.Score);
         }
-
 
         if(transform.position.x < -16)
         {

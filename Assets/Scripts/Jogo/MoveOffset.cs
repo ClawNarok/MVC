@@ -8,6 +8,7 @@ public class MoveOffset : MonoBehaviour
     public float speed;
     private float offset;
 
+
     void Start()
     {
         currentMaterial = GetComponent<Renderer>().material;
@@ -19,4 +20,4 @@ public class MoveOffset : MonoBehaviour
 
         currentMaterial.SetTextureOffset("_MainTex", new Vector2(offset * speed, 0));
     }
-}
+} 

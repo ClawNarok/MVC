@@ -6,17 +6,13 @@ public class SpawnObject : MonoBehaviour
 {
     public float maxHeight;
     public float minHeight;
-
     public float rateSpawn;
-
     private float currentRateSpawn;
-
     public int maxCarro;
-
     public List<GameObject> Carro;
-
     private float randPositionY;
     private float randPositionZ;
+
 
     void Update()
     {

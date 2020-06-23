@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverControl : MonoBehaviour
 {
@@ -11,15 +12,14 @@ public class GameOverControl : MonoBehaviour
     void Start()
     {
         atual.text = PlayerPrefs.GetInt("Score").ToString();
-        atual.text = PlayerPrefs.GetInt("Recorde").ToString();
+        record.text = PlayerPrefs.GetInt("Recorde").ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Application.LoadLevel("Jogo");
+            SceneManager.LoadScene("Jogo");
         }
     }
 }

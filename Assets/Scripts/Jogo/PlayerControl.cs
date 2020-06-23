@@ -1,22 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
     public GameObject player;
     public float maxHeight;
     public float minHeight;
-
     public float speedY;
     public float speedX;
-
     public int Score;
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -40,19 +35,18 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(Score > PlayerPrefs.GetInt("Recorde"))
+        if (Score > PlayerPrefs.GetInt("Recorde"))
         {
             PlayerPrefs.SetInt("Recorde", Score);
         }
 
         PlayerPrefs.SetInt("Score", Score);
 
-        Application.LoadLevel("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void addscore()
     {
         Score++;
     }
-
 }
