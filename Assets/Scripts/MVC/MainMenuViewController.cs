@@ -24,7 +24,12 @@ public class MainMenuViewController : ViewController<MainMenuView>
 
     public void PlayGame()
     {
-        Debug.Log("Jogar");
+        GamePlay gamePlay = Game.PlayGame();
+
+        GamePlayViewController gamePlayViewController = _factory.CreateGamePlayViewController();
+        gamePlayViewController.Setup(gamePlay);
+
+        _wireframe.PresentViewController(gamePlayViewController);
     }
 
     public void ShowSettingsMenu()

@@ -10,6 +10,8 @@ public class InspectorViewControllerFactory : MonoBehaviour, IViewControllerFact
     MainMenuView _mainMenuViewPrefab;
     [SerializeField]
     SettingsMenuView _settingsMenuViewPrefab;
+    [SerializeField]
+    GamePlayView _gamePlayViewPrefab;
 
 
     public MainMenuViewController CreateMainMenuViewController()
@@ -22,5 +24,11 @@ public class InspectorViewControllerFactory : MonoBehaviour, IViewControllerFact
     {
         SettingsMenuView settingsMenuView = Instantiate(_settingsMenuViewPrefab);
         return new SettingsMenuViewController(settingsMenuView, _wireframe, this);
+    }
+
+    public GamePlayViewController CreateGamePlayViewController()
+    {
+        GamePlayView gamePlayView = Instantiate(_gamePlayViewPrefab);
+        return new GamePlayViewController(gamePlayView, _wireframe, this);
     }
 }

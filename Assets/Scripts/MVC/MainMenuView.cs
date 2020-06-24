@@ -19,6 +19,7 @@ public class MainMenuView : View
     public void Setup(string txt)
     {
         _txtTitle.text = txt;
+        AutoSave.IniciaGame();
     }
 
     public void AddButton(Action buttonCallback, string txtButton)

@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 1195599880}
   - component: {fileID: 1195599882}
   - component: {fileID: 1195599881}
+  - component: {fileID: 1195599883}
   m_Layer: 0
   m_Name: AppDelegate
   m_TagString: Untagged
@@ -318,6 +319,8 @@ MonoBehaviour:
     type: 3}
   _settingsMenuViewPrefab: {fileID: 7312429704621363365, guid: 1ba941c2a47e1204d8563ef21cf18b1d,
     type: 3}
+  _gamePlayViewPrefab: {fileID: 4455188178782722597, guid: bf3b46fe6eb44304f8ae1be1c60e2233,
+    type: 3}
 --- !u!114 &1195599882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +335,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wireframe: {fileID: 1234884724}
   _factory: {fileID: 1195599881}
+--- !u!114 &1195599883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195599879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254e7ee8c1b6ee9478f143596894740b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePrefab: {fileID: 2151319562066517354, guid: c65f358d186712c4096eab6f6c2deb9c,
+    type: 3}
 --- !u!1 &1234884722
 GameObject:
   m_ObjectHideFlags: 0

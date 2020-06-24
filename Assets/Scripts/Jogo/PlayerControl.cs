@@ -1,17 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
+    [SerializeField]
+    GamePlay GP;
     public GameObject player;
     public float maxHeight;
     public float minHeight;
     public float speedY;
     public float speedX;
-    public int Score;
+    public GameObject Inimigos;
 
+    void Awake()
+    {
+        Inimigos = new GameObject("Inimigos");
+        Inimigos.transform.SetParent(GP.transform);
+    }
 
     void Update()
     {
@@ -23,30 +31,20 @@ public class PlayerControl : MonoBehaviour
         var pos = player.transform.position;
 
         if (player.transform.position.y > maxHeight)
-        {
             player.transform.position = new Vector2(pos.x, maxHeight);
-        }
 
         if (player.transform.position.y < minHeight)
-        {
             player.transform.position = new Vector2(pos.x, minHeight);
-        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (Score > PlayerPrefs.GetInt("Recorde"))
-        {
-            PlayerPrefs.SetInt("Recorde", Score);
-        }
-
-        PlayerPrefs.SetInt("Score", Score);
-
-        SceneManager.LoadScene("GameOver");
+        Destroy(Inimigos);
+        GP.GameOver();
     }
 
-    public void addscore()
+    public void Pontuar()
     {
-        Score++;
+        GP.UpdateScore();
     }
 }

@@ -20,8 +20,6 @@ public class ButtonView : MonoBehaviour
     public void OnClick()
     {
         if (_buttonCallback != null)
-        {
             _buttonCallback.Invoke();
-        }
     }
 }

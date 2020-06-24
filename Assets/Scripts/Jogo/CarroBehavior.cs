@@ -13,8 +13,8 @@ public class CarroBehavior : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType(typeof(PlayerControl)) as PlayerControl;
-        spawn = FindObjectOfType(typeof(SpawnObject)) as SpawnObject;
+        player = FindObjectOfType<PlayerControl>();
+        spawn = FindObjectOfType<SpawnObject>();
     }
 
     void OnEnable()
@@ -24,22 +24,22 @@ public class CarroBehavior : MonoBehaviour
 
     void Update()
     {
-        if (player.Score >= 50)
+        if (AutoSave.Score >= 50)
         {
             speed = -25;
             spawn.rateSpawn = 0.5f;
         }
-        else if (player.Score >= 30)
+        else if (AutoSave.Score >= 30)
         {
             speed = -20;
             spawn.rateSpawn = 0.8f;
         }
-        else if(player.Score >= 20)
+        else if(AutoSave.Score >= 20)
         {
             speed = -15;
             spawn.rateSpawn = 1f;
         }
-        else if(player.Score >= 10)
+        else if(AutoSave.Score >= 10)
         {
             speed = -12;
             spawn.rateSpawn = 1.2f;
@@ -49,11 +49,11 @@ public class CarroBehavior : MonoBehaviour
 
         if (transform.position.x < player.transform.position.x && !passou)
         {
-            player.addscore();
+            player.Pontuar();
             passou = true;
             GetComponent<AudioSource>().Play();
 
-            Debug.Log(player.Score);
+            Debug.Log(AutoSave.Score);
         }
 
         if(transform.position.x < -16)

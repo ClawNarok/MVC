@@ -12,7 +12,13 @@ public class SpawnObject : MonoBehaviour
     public List<GameObject> Carro;
     private float randPositionY;
     private float randPositionZ;
+    PlayerControl playerControl;
 
+
+    void Awake()
+    {
+        playerControl =  FindObjectOfType<PlayerControl>();
+    }
 
     void Update()
     {
@@ -42,6 +48,6 @@ public class SpawnObject : MonoBehaviour
 
         int rnd = Random.Range(0, Carro.Count);
 
-        GameObject tempCarro = Instantiate(Carro[rnd], new Vector3(transform.position.x, randPositionY, randPositionZ), transform.rotation);
+        GameObject tempCarro = Instantiate(Carro[rnd], new Vector3(transform.position.x, randPositionY, randPositionZ), transform.rotation, playerControl.Inimigos.transform);
     }
 }

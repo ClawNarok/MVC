@@ -18,6 +18,7 @@ public class SettingsMenuViewController : ViewController<SettingsMenuView>
     public void Setup()
     {
         View.Setup(BackToMenu, "Configurações", "Voltar");
+        View.AddButton(ClearSave, "Apagar recorde");
     }
 
     void BackToMenu()
@@ -26,5 +27,10 @@ public class SettingsMenuViewController : ViewController<SettingsMenuView>
         mainMenuViewController.Setup();
 
         _wireframe.PresentViewController(mainMenuViewController);
+    }
+
+    void ClearSave()
+    {
+        AutoSave.ResetSave();
     }
 }

@@ -10,12 +10,23 @@ public class SettingsMenuView : View
     Text _txtTitle;
 
     [SerializeField]
-    ButtonView _buttonView;
+    ButtonView _buttonBackView;
+    [SerializeField]
+    Transform _btnList;
+    
+    [SerializeField]
+    ButtonView _buttonViewPrefab;
 
 
     public void Setup(Action buttonCallback, string txtTitle, string btnText)
     {
         _txtTitle.text = txtTitle;
-        _buttonView.Setup(buttonCallback, btnText);
+        _buttonBackView.Setup(buttonCallback, btnText);
+    }
+
+    public void AddButton(Action buttonCallback, string txtButton)
+    {
+        ButtonView buttonView = Instantiate(_buttonViewPrefab, _btnList);
+        buttonView.Setup(buttonCallback, txtButton);
     }
 }
