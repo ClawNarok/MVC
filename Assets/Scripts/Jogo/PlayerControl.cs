@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     GamePlay GP;
     public GameObject player;
+    public GameObject gameOverPrefab;
     public float maxHeight;
     public float minHeight;
     public float speedY;
@@ -39,6 +40,8 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        var gameOver = Instantiate(gameOverPrefab, Camera.main.transform.position, Quaternion.identity);
+        Destroy(gameOver, gameOver.GetComponent<AudioSource>().clip.length);
         Destroy(Inimigos);
         GP.GameOver();
     }

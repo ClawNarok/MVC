@@ -487,6 +487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GP: {fileID: 2151319562066517354}
   player: {fileID: 8969555353895431746}
+  gameOverPrefab: {fileID: 8294204992408920590, guid: 05d79f6622ad31c479a3e1df04961dab,
+    type: 3}
   maxHeight: 0.45
   minHeight: -1.87
   speedY: 0.3
